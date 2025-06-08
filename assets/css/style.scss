@@ -57,3 +57,61 @@ code, pre {
     padding: 0.5rem;
   }
 }
+
+.menu-toggle {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3c8b94;
+  margin-left: auto;
+  display: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li a {
+  text-decoration: none;
+  color: #3c8b94;
+  font-weight: bold;
+}
+
+.site-nav li a:hover {
+  color: #e27a6b;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #eee8d5;
+    padding: 1rem;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav li {
+    margin: 0.5rem 0;
+  }
+}
