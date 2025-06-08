@@ -71,11 +71,12 @@ code, pre {
   padding: 1rem;
   position: absolute;
   top: 64px; /* ヘッダー下 */
-  right: 1rem;
-  width: 200px;
+  right: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  border-radius: 0;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
