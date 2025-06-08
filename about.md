@@ -1,5 +1,4 @@
 ---
-
 layout: page
 title: こうのすプラスの理念
 permalink: /about/
