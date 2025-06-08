@@ -2,7 +2,7 @@
 layout: page
 title: こうのすプラスの理念
 permalink: /about/
-nav:true
+nav: true
 ---
 
 > 知る・楽しむ・つながる。地域の可能性にプラスする。

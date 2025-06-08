@@ -50,16 +50,6 @@ code, pre {
   display: block;
 }
 
-@media (max-width: 600px) {
-  .site-logo {
-    height: 48px;
-  }
-
-  .site-header {
-    padding: 0.5rem;
-  }
-}
-
 .menu-toggle {
   font-size: 1.8rem;
   background: none;
@@ -95,6 +85,17 @@ code, pre {
 .site-content {
   padding: 0rem 2rem; /* 上下0、左右2remの余白 */
 }
+
+@media (max-width: 600px) {
+  .site-logo {
+    height: 48px;
+  }
+
+  .site-header {
+    padding: 0.5rem;
+  }
+}
+
 
 @media (max-width: 768px) {
   .menu-toggle {
