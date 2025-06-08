@@ -1,4 +1,7 @@
-/* 背景色と文字色 */
+---
+---
+
+/* ブランドカラー + レイアウト調整 */
 body {
   background-color: #eee8d5;
   color: #002b36;
@@ -16,11 +19,11 @@ h1, h2, h3 {
 a {
   color: #3c8b94;
   text-decoration: underline;
-}
 
-a:hover {
-  color: #e27a6b;
-  text-decoration: none;
+  &:hover {
+    color: #e27a6b;
+    text-decoration: none;
+  }
 }
 
 code, pre {
@@ -31,7 +34,7 @@ code, pre {
 
 .site-header {
   padding: 1rem 2rem;
-  background-color: #eee8d5; /* ブランド背景色 */
+  background-color: #eee8d5;
   display: flex;
   align-items: center;
 }
@@ -43,10 +46,8 @@ code, pre {
 .site-logo {
   height: 48px;
   display: block;
-}
 
-@media (max-width: 600px) {
-  .site-logo {
+  @media (max-width: 600px) {
     height: 36px;
   }
 }

@@ -3,3 +3,5 @@ description:  知る・楽しむ・つながる。地域の可能性にプラス
 baseurl: ""
 url: "https://konosuplus.jp"
 theme: minima
+sass:
+  style: compressed
