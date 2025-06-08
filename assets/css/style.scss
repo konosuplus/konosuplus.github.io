@@ -92,6 +92,10 @@ code, pre {
   color: #e27a6b;
 }
 
+.site-content {
+  padding: 0rem 2rem; /* 上下0、左右2remの余白 */
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
