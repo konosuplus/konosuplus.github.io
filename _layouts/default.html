@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | {{ site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/ogp.jpg">
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
   </head>
 
   <body>
-    <header class="site-header">
+    <header class="site-header" role="banner">
       <div class="container">
         <a href="{{ '/' | relative_url }}" class="logo-link">
           <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="こうのすプラス ロゴ" class="site-logo">
         </a>
+
+        <nav class="site-nav" role="navigation" aria-label="メインメニュー">
+          <ul>
+            {% assign current = page.url %}
+            {% for my_page in site.pages %}
+              {% if my_page.nav == true %}
+                <li>
+                  <a href="{{ my_page.url | relative_url }}"
+                     class="{% if my_page.url == current %}active{% endif %}">
+                    {{ my_page.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <main class="site-content">
+    <main class="site-content container">
       {{ content }}
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="container">
-        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        {% if site.github_username %}
+          <p>
+            <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+          </p>
+        {% endif %}
       </div>
     </footer>
   </body>
