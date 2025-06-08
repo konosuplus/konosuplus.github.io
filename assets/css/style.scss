@@ -105,13 +105,14 @@ code, pre {
   .site-nav {
     display: none;
     flex-direction: column;
-    background-color: #eee8d5;
-    padding: 1rem;
     position: absolute;
     top: 64px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
+    right: 1rem; /* 右寄せ */
+    background-color: #eee8d5;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 見た目の補強 */
+    border-radius: 8px;
   }
 
   .site-nav.open {
@@ -119,6 +120,7 @@ code, pre {
   }
 
   .site-nav li {
-    margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    text-align: right;
   }
 }
