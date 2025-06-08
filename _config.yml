@@ -5,5 +5,3 @@ url: "https://konosuplus.jp"
 theme: minima
 sass:
   style: compressed
-plugins:
-  - jekyll-sitemap
