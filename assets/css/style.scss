@@ -1,23 +1,22 @@
 ---
 ---
 
-/* 基本スタイル */
+/* ブランドカラー + 全体設定 */
 body {
   background-color: #eee8d5;
   color: #002b36;
   font-family: 'Rounded Mplus 1c', sans-serif;
   line-height: 1.75;
-  margin: 0;
-  padding: 0 2rem; /* 左右に余白追加 */
+  padding: 0rem 2rem;
 }
 
-/* 見出し */
+/* 見出しスタイル */
 h1, h2, h3 {
   color: #3c8b94;
   margin-top: 2em;
 }
 
-/* リンク */
+/* リンク設定 */
 a {
   color: #3c8b94;
   text-decoration: underline;
@@ -28,76 +27,80 @@ a {
   }
 }
 
-/* コード表示 */
+/* コードブロック */
 code, pre {
   background-color: #93a1a1;
   padding: 0.2em 0.5em;
   border-radius: 4px;
 }
 
-/* ヘッダー */
+/* ヘッダー全体 */
 .site-header {
   background-color: #eee8d5;
   padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
 }
 
-/* ロゴ */
+/* ヘッダー内部のレイアウト */
+.site-header .site-header-inner {
+  display: flex;
+  align-items: center;
+}
+
+/* ロゴリンク */
 .logo-link {
   display: inline-block;
 }
 
+/* ロゴ画像 */
 .site-logo {
   height: 64px;
   display: block;
 }
 
-@media (max-width: 600px) {
-  .site-logo {
-    height: 48px;
-  }
-}
-
-/* メニューボタン */
+/* メニューアイコン（ハンバーガー） */
 .menu-toggle {
   font-size: 2rem;
   background: none;
   border: none;
-  cursor: pointer;
   color: #3c8b94;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1001;
 }
 
-/* ナビゲーション */
+/* メニュー本体 */
 .site-nav {
   display: none;
   flex-direction: column;
-  background-color: #eee8d5;
-  padding: 1rem;
   position: absolute;
   top: 64px;
   right: 0;
-  width: 200px;
-  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #eee8d5;
+  padding: 1rem;
   z-index: 1000;
 }
 
+/* メニュー展開時 */
 .site-nav.open {
   display: flex;
 }
 
-.site-nav ul {
+/* メニューリスト */
+.nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
-.site-nav li a {
+.nav-list li {
+  margin: 0.5rem 0;
+}
+
+.nav-list a {
   color: #3c8b94;
   font-weight: bold;
   text-decoration: none;
@@ -110,8 +113,20 @@ code, pre {
 /* フッター */
 .site-footer {
   background-color: #eee8d5;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
   text-align: center;
-  padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #586e75;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 600px) {
+  .site-logo {
+    height: 48px;
+  }
+
+  body {
+    padding: 0rem 1rem;
+  }
 }
