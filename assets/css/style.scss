@@ -7,7 +7,7 @@ body {
   color: #002b36;
   font-family: 'Rounded Mplus 1c', sans-serif;
   line-height: 1.75;
-  padding: 1rem;
+  margin: 0;
 }
 
 /* 見出しカラーと余白調整 */
@@ -33,10 +33,12 @@ code, pre {
 }
 
 .site-header {
-  padding: 0.5rem 1rem;
   background-color: #eee8d5;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .logo-link {
@@ -64,13 +66,13 @@ code, pre {
   border: none;
   cursor: pointer;
   color: #3c8b94;
-  margin-left: auto;
   display: none;
 }
 
 .site-nav {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .site-nav ul {
