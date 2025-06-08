@@ -37,9 +37,9 @@ code, pre {
 
 /* ヘッダー構造 */
 .site-header {
-  background-color: #eee8d5;
-  padding: 0.5rem 1rem;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // ← 左端にロゴ、右端にハンバーガーを配置
 }
 
 .logo-row {
