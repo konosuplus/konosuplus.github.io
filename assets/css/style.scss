@@ -1,13 +1,14 @@
 ---
 ---
 
-/* 基本設定 */
+/* 基本スタイル */
 body {
   background-color: #eee8d5;
   color: #002b36;
   font-family: 'Rounded Mplus 1c', sans-serif;
   line-height: 1.75;
-  padding: 1rem 2rem;
+  margin: 0;
+  padding: 0 2rem; /* 左右に余白追加 */
 }
 
 /* 見出し */
@@ -16,6 +17,7 @@ h1, h2, h3 {
   margin-top: 2em;
 }
 
+/* リンク */
 a {
   color: #3c8b94;
   text-decoration: underline;
@@ -26,25 +28,23 @@ a {
   }
 }
 
+/* コード表示 */
 code, pre {
   background-color: #93a1a1;
   padding: 0.2em 0.5em;
   border-radius: 4px;
 }
 
-/* ヘッダーとナビゲーション */
+/* ヘッダー */
 .site-header {
   background-color: #eee8d5;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
-}
-
-.site-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* ロゴ */
 .logo-link {
   display: inline-block;
 }
@@ -54,6 +54,13 @@ code, pre {
   display: block;
 }
 
+@media (max-width: 600px) {
+  .site-logo {
+    height: 48px;
+  }
+}
+
+/* メニューボタン */
 .menu-toggle {
   font-size: 2rem;
   background: none;
@@ -63,76 +70,48 @@ code, pre {
   z-index: 1001;
 }
 
-/* ナビゲーションスタイル */
+/* ナビゲーション */
 .site-nav {
   display: none;
   flex-direction: column;
   background-color: #eee8d5;
   padding: 1rem;
   position: absolute;
-  top: 64px; /* ヘッダー下 */
+  top: 64px;
   right: 0;
-  left: 0;
-  width: 100%;
+  width: 200px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  border-radius: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
 .site-nav.open {
   display: flex;
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.site-nav li {
-  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .site-nav li a {
-  text-decoration: none;
   color: #3c8b94;
   font-weight: bold;
+  text-decoration: none;
 
   &:hover {
     color: #e27a6b;
   }
 }
 
-/* コンテナとフッター */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.site-content {
-  padding: 2rem 0;
-}
-
+/* フッター */
 .site-footer {
   background-color: #eee8d5;
-  padding: 2rem 1rem;
   text-align: center;
-  color: #666;
-}
-
-/* メディアクエリでPC表示でもハンバーガー表示を維持 */
-@media (min-width: 769px) {
-  .site-nav {
-    position: absolute;
-    top: 64px;
-    right: 1rem;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #586e75;
 }
