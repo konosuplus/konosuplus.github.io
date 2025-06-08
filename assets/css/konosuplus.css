@@ -1,0 +1,52 @@
+/* 背景色と文字色 */
+body {
+  background-color: #eee8d5;
+  color: #002b36;
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  line-height: 1.75;
+  padding: 1rem;
+}
+
+/* 見出しカラーと余白調整 */
+h1, h2, h3 {
+  color: #3c8b94;
+  margin-top: 2em;
+}
+
+a {
+  color: #3c8b94;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #e27a6b;
+  text-decoration: none;
+}
+
+code, pre {
+  background-color: #93a1a1;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+}
+
+.site-header {
+  padding: 1rem 2rem;
+  background-color: #eee8d5; /* ブランド背景色 */
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.site-logo {
+  height: 48px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    height: 36px;
+  }
+}
