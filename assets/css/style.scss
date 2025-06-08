@@ -1,22 +1,21 @@
 ---
 ---
 
-/* ブランドカラー + 全体設定 */
+/* 基本設定 */
 body {
   background-color: #eee8d5;
   color: #002b36;
   font-family: 'Rounded Mplus 1c', sans-serif;
   line-height: 1.75;
-  padding: 0rem 2rem;
+  padding: 1rem 2rem;
 }
 
-/* 見出しスタイル */
+/* 見出し */
 h1, h2, h3 {
   color: #3c8b94;
   margin-top: 2em;
 }
 
-/* リンク設定 */
 a {
   color: #3c8b94;
   text-decoration: underline;
@@ -27,106 +26,100 @@ a {
   }
 }
 
-/* コードブロック */
 code, pre {
   background-color: #93a1a1;
   padding: 0.2em 0.5em;
   border-radius: 4px;
 }
 
-/* ヘッダー全体 */
+/* ヘッダーとナビゲーション */
 .site-header {
   background-color: #eee8d5;
   padding: 0.5rem 1rem;
-  position: relative;
+  border-bottom: 1px solid #ccc;
 }
 
-/* ヘッダー内部のレイアウト */
-.site-header .site-header-inner {
+.site-header-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* ロゴリンク */
 .logo-link {
   display: inline-block;
 }
 
-/* ロゴ画像 */
 .site-logo {
   height: 64px;
   display: block;
 }
 
-/* メニューアイコン（ハンバーガー） */
 .menu-toggle {
   font-size: 2rem;
   background: none;
   border: none;
-  color: #3c8b94;
   cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #3c8b94;
   z-index: 1001;
 }
 
-/* メニュー本体 */
+/* ナビゲーションスタイル */
 .site-nav {
   display: none;
   flex-direction: column;
-  position: absolute;
-  top: 64px;
-  right: 0;
   background-color: #eee8d5;
   padding: 1rem;
-  z-index: 1000;
 }
 
-/* メニュー展開時 */
 .site-nav.open {
   display: flex;
 }
 
-/* メニューリスト */
-.nav-list {
+.site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav-list li {
+.site-nav li {
   margin: 0.5rem 0;
 }
 
-.nav-list a {
+.site-nav li a {
+  text-decoration: none;
   color: #3c8b94;
   font-weight: bold;
-  text-decoration: none;
 
   &:hover {
     color: #e27a6b;
   }
 }
 
-/* フッター */
-.site-footer {
-  background-color: #eee8d5;
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #586e75;
+/* コンテナとフッター */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-/* レスポンシブ調整 */
-@media (max-width: 600px) {
-  .site-logo {
-    height: 48px;
-  }
+.site-content {
+  padding: 2rem 0;
+}
 
-  body {
-    padding: 0rem 1rem;
+.site-footer {
+  background-color: #eee8d5;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+/* メディアクエリでPC表示でもハンバーガー表示を維持 */
+@media (min-width: 769px) {
+  .site-nav {
+    position: absolute;
+    top: 64px;
+    right: 1rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
   }
 }
