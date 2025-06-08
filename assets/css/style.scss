@@ -1,21 +1,23 @@
 ---
 ---
 
-/* ブランドカラー + レイアウト調整 */
+/* 基本スタイル */
 body {
   background-color: #eee8d5;
   color: #002b36;
   font-family: 'Rounded Mplus 1c', sans-serif;
   line-height: 1.75;
   margin: 0;
+  padding: 0 2rem; /* 左右に余白追加 */
 }
 
-/* 見出しカラーと余白調整 */
+/* 見出し */
 h1, h2, h3 {
   color: #3c8b94;
   margin-top: 2em;
 }
 
+/* リンク */
 a {
   color: #3c8b94;
   text-decoration: underline;
@@ -26,21 +28,23 @@ a {
   }
 }
 
+/* コード表示 */
 code, pre {
   background-color: #93a1a1;
   padding: 0.2em 0.5em;
   border-radius: 4px;
 }
 
+/* ヘッダー */
 .site-header {
   background-color: #eee8d5;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
+/* ロゴ */
 .logo-link {
   display: inline-block;
 }
@@ -50,77 +54,64 @@ code, pre {
   display: block;
 }
 
-.menu-toggle {
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #3c8b94;
-  display: none;
-}
-
-.site-nav {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav li a {
-  text-decoration: none;
-  color: #3c8b94;
-  font-weight: bold;
-}
-
-.site-nav li a:hover {
-  color: #e27a6b;
-}
-
-.site-content {
-  padding: 0rem 2rem; /* 上下0、左右2remの余白 */
-}
-
 @media (max-width: 600px) {
   .site-logo {
     height: 48px;
   }
+}
 
-  .site-header {
-    padding: 0.5rem;
+/* メニューボタン */
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3c8b94;
+  z-index: 1001;
+}
+
+/* ナビゲーション */
+.site-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #eee8d5;
+  padding: 1rem;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  width: 200px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.site-nav.open {
+  display: flex;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.site-nav li a {
+  color: #3c8b94;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: #e27a6b;
   }
 }
 
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .site-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    right: 1rem; /* 右寄せ */
-    background-color: #eee8d5;
-    padding: 1rem;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 見た目の補強 */
-    border-radius: 8px;
-  }
-
-  .site-nav.open {
-    display: flex;
-  }
-
-  .site-nav li {
-    margin-bottom: 0.5rem;
-    text-align: right;
-  }
+/* フッター */
+.site-footer {
+  background-color: #eee8d5;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #586e75;
 }
