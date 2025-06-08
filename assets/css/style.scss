@@ -33,7 +33,7 @@ code, pre {
 }
 
 .site-header {
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   background-color: #eee8d5;
   display: flex;
   align-items: center;
@@ -44,10 +44,15 @@ code, pre {
 }
 
 .site-logo {
-  height: 48px;
+  height: 64px;
   display: block;
 
-  @media (max-width: 600px) {
-    height: 36px;
+@media (max-width: 600px) {
+  .site-logo {
+    height: 48px;
+  }
+
+  .site-header {
+    padding: 0.5rem;
   }
 }
