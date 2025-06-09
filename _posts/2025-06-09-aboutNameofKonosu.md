@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "鴻巣の地名の由来はどこから？"
 date: 2025-06-09 19:00:00 +0900
 categories: [地域,歴史]
