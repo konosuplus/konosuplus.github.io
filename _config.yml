@@ -7,3 +7,6 @@ sass:
   style: compressed
 plugins:
   - jekyll-sitemap
+collections:
+  posts:
+    output: true
